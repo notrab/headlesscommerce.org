@@ -41,7 +41,6 @@ const products = await query.orderBy(dirFunction(sortableColumns[sort]));
                     <tr>
                       <TableHeader label="Product" column="name" currentSort={sort} direction={dirString} />
                       <TableHeader label="Category" column="category" currentSort={sort} direction={dirString} />
-                      <TableHeader label="Website" column="website" currentSort={sort} direction={dirString} />
                       <TableHeader label="Launch Year" column="launchYear" currentSort={sort} direction={dirString} />
                       <TableHeader label="Free Tier" />
                     </tr>
@@ -68,23 +67,19 @@ const products = await query.orderBy(dirFunction(sortableColumns[sort]));
                                 )}
                           </div>
                           <div class="ml-4">
-                            <div class="font-medium text-gray-900">{platform.name}</div>
-                          </div>
+                          <a
+                                        href={`/p/${platform.id}`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="font-medium text-black hover:text-blue-600"
+                                      >
+                            {platform.name}</a>
+                        </div>
                         </div>
                       </td>
                         <td class="px-6 py-4 whitespace-nowrap">
                         {platform.category}
                           <!-- <Badge label={platform.category} /> -->
-                        </td>
-                        <td class="px-6 py-4 whitespace-nowrap">
-                        <a
-                                      href={`/p/${platform.id}`}
-                                      target="_blank"
-                                      rel="noopener noreferrer"
-                                      class="text-black hover:text-blue-600"
-                                    >
-                            {platform.website}
-                          </a>
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap text-gray-500">
                           {platform.launchYear}
