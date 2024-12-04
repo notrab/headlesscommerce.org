@@ -1,11 +1,105 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import { db, eq, Product, asc, desc } from "astro:db";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+import Welcome from "../components/Welcome.astro";
+import TableHeader from "../components/TableHeader.astro";
+
+const sortableColumns = {
+  name: Product.name,
+  category: Product.category,
+  website: Product.website,
+  launchYear: Product.launchYear,
+  freeTier: Product.hasFreeTier
+} as const;
+
+type SortableColumn = keyof typeof sortableColumns;
+
+const { searchParams } = Astro.url;
+const sort = (searchParams.get("sort") as SortableColumn) || "name";
+const dirString = searchParams.get("dir") === "desc" ? "desc" : "asc";
+const dirFunction = dirString === "desc" ? desc : asc;
+const category = searchParams.get("category");
+
+let query = db.select().from(Product);
+
+const products = await query.orderBy(dirFunction(sortableColumns[sort]));
+
+// if (category) {
+//     query = query.where(eq(Product.category, category));
+// }
+
+// const products = await query.orderBy(Product[sort], asc);
+// const categories = [...new Set(products.map((p) => p.category))];
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Build your next commerce stack | Headless Commerce Directory">
+    <Welcome />
+
+    <table class="w-full">
+                  <thead class="bg-black border-b sticky top-0 z-20">
+                    <tr>
+                      <TableHeader label="Product" column="name" currentSort={sort} direction={dirString} />
+                      <TableHeader label="Category" column="category" currentSort={sort} direction={dirString} />
+                      <TableHeader label="Website" column="website" currentSort={sort} direction={dirString} />
+                      <TableHeader label="Launch Year" column="launchYear" currentSort={sort} direction={dirString} />
+                      <TableHeader label="Free Tier" />
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-gray-200 bg-white">
+                    {products.map((platform) => (
+                      <tr class="hover:bg-white">
+                      <td class="px-6 py-4 whitespace-nowrap">
+                        <div class="flex items-center">
+                          <div class="flex-shrink-0 h-10">
+                          {platform.logo ? (
+                                  <img
+                                    src={platform.logo}
+                                    alt={`${platform.name} logo`}
+                                    title={`${platform.name} logo`}
+                                    class="h-10 w-10 object-contain"
+                                  />
+                                ) : (
+                                  <div class="h-10 w-10 bg-gray-200 rounded-full flex items-center justify-center">
+                                    <span class="text-gray-500 font-semibold text-sm">
+                                      {platform.name.charAt(0)}
+                                    </span>
+                                  </div>
+                                )}
+                          </div>
+                          <div class="ml-4">
+                            <div class="font-medium text-gray-900">{platform.name}</div>
+                          </div>
+                        </div>
+                      </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                        {platform.category}
+                          <!-- <Badge label={platform.category} /> -->
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                        <a
+                                      href={`/p/${platform.id}`}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      class="text-black hover:text-blue-600"
+                                    >
+                            {platform.website}
+                          </a>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-gray-500">
+                          {platform.launchYear}
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                          <span class={`inline-flex rounded-full px-2 text-xs font-semibold leading-5 ${
+                            platform.hasFreeTier
+                              ? 'bg-green-100 text-green-800'
+                              : 'bg-red-100 text-red-800'
+                          }`}>
+                            {platform.hasFreeTier ? 'Yes' : 'No'}
+                          </span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
 </Layout>

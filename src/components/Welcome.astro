@@ -1,209 +1,47 @@
----
-import astroLogo from '../assets/astro.svg';
-import background from '../assets/background.svg';
----
-
-<div id="container">
-	<img id="background" src={background.src} alt="" fetchpriority="high" />
-	<main>
-		<section id="hero">
-			<a href="https://astro.build"
-				><img src={astroLogo.src} width="115" height="48" alt="Astro Homepage" /></a
-			>
-			<h1>
-				To get started, open the <code><pre>src/pages</pre></code> directory in your project.
-			</h1>
-			<section id="links">
-				<a class="button" href="https://docs.astro.build">Read our docs</a>
-				<a href="https://astro.build/chat"
-					>Join our Discord <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 127.14 96.36"
-						><path
-							fill="currentColor"
-							d="M107.7 8.07A105.15 105.15 0 0 0 81.47 0a72.06 72.06 0 0 0-3.36 6.83 97.68 97.68 0 0 0-29.11 0A72.37 72.37 0 0 0 45.64 0a105.89 105.89 0 0 0-26.25 8.09C2.79 32.65-1.71 56.6.54 80.21a105.73 105.73 0 0 0 32.17 16.15 77.7 77.7 0 0 0 6.89-11.11 68.42 68.42 0 0 1-10.85-5.18c.91-.66 1.8-1.34 2.66-2a75.57 75.57 0 0 0 64.32 0c.87.71 1.76 1.39 2.66 2a68.68 68.68 0 0 1-10.87 5.19 77 77 0 0 0 6.89 11.1 105.25 105.25 0 0 0 32.19-16.14c2.64-27.38-4.51-51.11-18.9-72.15ZM42.45 65.69C36.18 65.69 31 60 31 53s5-12.74 11.43-12.74S54 46 53.89 53s-5.05 12.69-11.44 12.69Zm42.24 0C78.41 65.69 73.25 60 73.25 53s5-12.74 11.44-12.74S96.23 46 96.12 53s-5.04 12.69-11.43 12.69Z"
-						></path></svg
-					>
-				</a>
-			</section>
-		</section>
-	</main>
-
-	<a href="https://astro.build/blog/astro-5/" id="news" class="box">
-		<svg width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg"
-			><path
-				d="M24.667 12c1.333 1.414 2 3.192 2 5.334 0 4.62-4.934 5.7-7.334 12C18.444 28.567 18 27.456 18 26c0-4.642 6.667-7.053 6.667-14Zm-5.334-5.333c1.6 1.65 2.4 3.43 2.4 5.333 0 6.602-8.06 7.59-6.4 17.334C13.111 27.787 12 25.564 12 22.666c0-4.434 7.333-8 7.333-16Zm-6-5.333C15.111 3.555 16 5.556 16 7.333c0 8.333-11.333 10.962-5.333 22-3.488-.774-6-4-6-8 0-8.667 8.666-10 8.666-20Z"
-				fill="#111827"></path></svg
-		>
-		<h2>What's New in Astro 5.0?</h2>
-		<p>
-			From content layers to server islands, click to learn more about the new features and
-			improvements in Astro 5.0
-		</p>
-	</a>
+<div class="bg-black">
+    <div class="relative isolate overflow-hidden">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+                <div class="hidden sm:mb-8 sm:flex sm:justify-center">
+                    <svg
+                        class="h-14 fill-current text-white"
+                        viewBox="0 0 724 178"
+                        ><path
+                            d="M11.948 130.884c0 11.808 2.767 20.933 8.3 27.372s13.425 9.659 23.67 9.659c6.07 0 12.964-1.052 20.68-3.157l.86-.238v9.196l-.573.21c-6.15 2.206-13.674 3.308-22.572 3.308-13.29 0-23.545-4.032-30.767-12.097C4.326 157.073.715 145.614.715 130.76c0-6.885.953-13.139 2.86-18.761h11.83c-2.305 5.316-3.457 11.611-3.457 18.885zm155.52-.124c0 14.442-3.653 25.799-10.956 34.069-7.303 8.27-17.456 12.405-30.458 12.405-13.29 0-23.546-4.063-30.767-12.19-7.221-8.125-10.832-19.595-10.832-34.407 0-6.953.812-13.166 2.434-18.639h11.545c-1.913 5.2-2.87 11.454-2.87 18.762 0 12.22 2.603 21.489 7.808 27.804 5.205 6.316 12.766 9.474 22.682 9.474 9.998 0 17.549-3.147 22.65-9.443 5.103-6.295 7.654-15.573 7.654-27.835 0-7.32-.924-13.574-2.772-18.762h11.344c1.691 5.528 2.537 11.782 2.537 18.762zm423.331.124c0 11.808 2.767 20.933 8.301 27.372 5.535 6.44 13.424 9.659 23.67 9.659 6.07 0 12.963-1.052 20.679-3.157l.86-.238v9.196l-.572.21c-6.15 2.206-13.675 3.308-22.572 3.308-13.29 0-23.546-4.032-30.767-12.097-7.221-8.064-10.832-19.523-10.832-34.377 0-6.885.954-13.139 2.86-18.761h11.83c-2.305 5.316-3.457 11.611-3.457 18.885zm-309.843-18.885V176h-10.492v-58.14l.003-1.181c.008-1.53.03-3.09.068-4.678zm-16.251 0L239.975 176h-8.455l-24.495-64h10.432l18.506 48.2h.494l18.665-48.2zm-63.43 5.344.002 1.259V176h-9.69v-64l9.631-.003c.032 1.728.051 3.51.057 5.346zm197.799-5.344V176h-10.492v-58.14l.003-1.181c.008-1.53.03-3.09.068-4.678zm-16.251 0L358.093 176h-8.455l-24.495-64h10.432l18.506 48.2h.494L373.24 112zm-63.43 5.344.002 1.259V176h-9.69v-64l9.631-.003c.032 1.728.051 3.51.057 5.346zm118.922-5.344v12.157h37.402v9.258h-37.401v33.205h39.808V176h-50.3l-.001-64zm103.325 23.293-.45.159L565.69 176h-12.405l-21.848-37.525h-18.825V176h-10.492v-64h10.492v17.464h14.38c7.407 0 12.838-1.47 16.294-4.413 3.42-2.91 5.148-7.26 5.184-13.051h10.855c-.244 11.377-6.14 19.141-17.686 23.292zm136.85-23.293v12.157h37.401v9.258H678.49v33.205h39.808V176h-50.3l-.001-64zM10.071 92V47.624H62.78V92h6.357V1.767h-6.357v40.056H10.07V1.767H3.776V92zm153.93 0v-5.802h-43.018V47.501h40.61v-5.802h-40.61V7.57H164V1.767h-49.314V92zm34.627 0 12.59-31.847h36.662L260.409 92h7.097l-35.55-90.603h-4.011L191.654 92zm47.153-37.525h-32.279l12.653-32.402c1.316-3.21 2.53-6.79 3.641-10.74 1.44 4.527 2.675 8.065 3.703 10.616zM321.884 92c15.388 0 27.053-3.878 34.994-11.634S368.79 61.161 368.79 46.02c0-14.443-3.755-25.429-11.264-32.958-7.509-7.53-18.464-11.295-32.865-11.295h-24.379V92zm-.37-5.555h-14.937V7.322h16.603c12.714 0 22.352 3.26 28.915 9.782 6.563 6.522 9.844 16.243 9.844 29.162 0 26.786-13.475 40.18-40.426 40.18zM458.84 92v-5.925h-43.018V1.767h-6.296V92zm84.866 0v-5.802h-43.018V47.501H541.3v-5.802h-40.61V7.57h43.017V1.767h-49.313V92zm59.87 1.234c9.176 0 16.53-2.2 22.065-6.604 5.534-4.402 8.301-10.368 8.301-17.898 0-4.115-.813-7.622-2.438-10.523-1.625-2.9-4.207-5.493-7.746-7.777-3.538-2.283-8.825-4.639-15.861-7.066-6.707-2.387-11.439-4.434-14.196-6.141s-4.742-3.632-5.956-5.771-1.82-4.876-1.82-8.209c0-5.307 1.975-9.504 5.925-12.59 3.95-3.086 9.258-4.63 15.923-4.63 6.83 0 13.99 1.564 21.478 4.691l2.284-5.43C624.089 2.075 616.126.47 607.65.47c-8.312 0-15.111 2.13-20.398 6.388-5.288 4.259-7.931 9.762-7.931 16.51 0 6.13 1.759 11.037 5.277 14.72 3.518 3.682 9.885 7.108 19.102 10.276 6.295 2.14 11.068 4.135 14.319 5.987 3.25 1.851 5.595 3.898 7.035 6.14s2.16 5.072 2.16 8.487c0 5.513-2.17 9.967-6.51 13.362-4.342 3.395-10.215 5.092-17.621 5.092-10.081 0-18.372-1.379-24.873-4.135v6.295c5.884 2.428 14.34 3.641 25.366 3.641zm88.878 0c9.176 0 16.53-2.2 22.065-6.604 5.534-4.402 8.301-10.368 8.301-17.898 0-4.115-.813-7.622-2.438-10.523-1.625-2.9-4.207-5.493-7.746-7.777-3.538-2.283-8.825-4.639-15.861-7.066-6.707-2.387-11.439-4.434-14.196-6.141s-4.742-3.632-5.955-5.771-1.821-4.876-1.821-8.209c0-5.307 1.975-9.504 5.925-12.59 3.95-3.086 9.258-4.63 15.923-4.63 6.83 0 13.99 1.564 21.478 4.691l2.284-5.43C712.967 2.075 705.004.47 696.53.47c-8.312 0-15.11 2.13-20.398 6.388-5.287 4.259-7.931 9.762-7.931 16.51 0 6.13 1.759 11.037 5.277 14.72 3.518 3.682 9.885 7.108 19.102 10.276 6.295 2.14 11.068 4.135 14.319 5.987 3.25 1.851 5.595 3.898 7.036 6.14s2.16 5.072 2.16 8.487c0 5.513-2.17 9.967-6.512 13.362-4.34 3.395-10.214 5.092-17.62 5.092-10.081 0-18.372-1.379-24.873-4.135v6.295c5.884 2.428 14.34 3.641 25.366 3.641z"
+                        ></path></svg
+                    >
+                </div>
+                <div class="text-center">
+                    <h1
+                        class="text-balance text-5xl font-black tracking-tight text-white sm:text-7xl"
+                    >
+                        Build your next <span
+                            class="text-transparent bg-gradient-to-tl from-blue-600 to-blue-700 bg-clip-text"
+                        >
+                            commerce stack</span
+                        >
+                    </h1>
+                    <p
+                        class="mt-8 text-pretty text-lg font-medium text-white/80 sm:text-xl/8"
+                    >
+                        A curated list of commerce products and services.<br
+                            class="hidden md:block"
+                        /> A heads-up for modern store builders.
+                    </p>
+                    <div class="mt-10 flex items-center justify-center gap-x-6">
+                        <a
+                            href="#"
+                            class="rounded-full bg-blue-700 px-5 py-3 text-sm font-semibold text-white shadow-sm hover:bg-blue-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+                            >Explore Directory</a
+                        >
+                        <!-- <a
+                            href="#"
+                            class="text-sm/6 font-semibold text-white/70 hover:text-black/100"
+                            >Suggest <span aria-hidden="true">→</span></a
+                        > -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-
-<style>
-	#background {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		z-index: -1;
-		filter: blur(100px);
-	}
-
-	#container {
-		font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
-		height: 100%;
-	}
-
-	main {
-		height: 100%;
-		display: flex;
-		justify-content: center;
-	}
-
-	#hero {
-		display: flex;
-		align-items: start;
-		flex-direction: column;
-		justify-content: center;
-		padding: 16px;
-	}
-
-	h1 {
-		font-size: 22px;
-		margin-top: 0.25em;
-	}
-
-	#links {
-		display: flex;
-		gap: 16px;
-	}
-
-	#links a {
-		display: flex;
-		align-items: center;
-		padding: 10px 12px;
-		color: #111827;
-		text-decoration: none;
-		transition: color 0.2s;
-	}
-
-	#links a:hover {
-		color: rgb(78, 80, 86);
-	}
-
-	#links a svg {
-		height: 1em;
-		margin-left: 8px;
-	}
-
-	#links a.button {
-		color: white;
-		background: linear-gradient(83.21deg, #3245ff 0%, #bc52ee 100%);
-		box-shadow:
-			inset 0 0 0 1px rgba(255, 255, 255, 0.12),
-			inset 0 -2px 0 rgba(0, 0, 0, 0.24);
-		border-radius: 10px;
-	}
-
-	#links a.button:hover {
-		color: rgb(230, 230, 230);
-		box-shadow: none;
-	}
-
-	pre {
-		font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas,
-			'DejaVu Sans Mono', monospace;
-		font-weight: normal;
-		background: linear-gradient(14deg, #d83333 0%, #f041ff 100%);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-clip: text;
-		margin: 0;
-	}
-
-	h2 {
-		margin: 0 0 1em;
-		font-weight: normal;
-		color: #111827;
-		font-size: 20px;
-	}
-
-	p {
-		color: #4b5563;
-		font-size: 16px;
-		line-height: 24px;
-		letter-spacing: -0.006em;
-		margin: 0;
-	}
-
-	code {
-		display: inline-block;
-		background:
-			linear-gradient(66.77deg, #f3cddd 0%, #f5cee7 100%) padding-box,
-			linear-gradient(155deg, #d83333 0%, #f041ff 18%, #f5cee7 45%) border-box;
-		border-radius: 8px;
-		border: 1px solid transparent;
-		padding: 6px 8px;
-	}
-
-	.box {
-		padding: 16px;
-		background: rgba(255, 255, 255, 1);
-		border-radius: 16px;
-		border: 1px solid white;
-	}
-
-	#news {
-		position: absolute;
-		bottom: 16px;
-		right: 16px;
-		max-width: 300px;
-		text-decoration: none;
-		transition: background 0.2s;
-		backdrop-filter: blur(50px);
-	}
-
-	#news:hover {
-		background: rgba(255, 255, 255, 0.55);
-	}
-
-	@media screen and (max-height: 368px) {
-		#news {
-			display: none;
-		}
-	}
-
-	@media screen and (max-width: 768px) {
-		#container {
-			display: flex;
-			flex-direction: column;
-		}
-
-		#hero {
-			display: block;
-			padding-top: 10%;
-		}
-
-		#links {
-			flex-wrap: wrap;
-		}
-
-		#links a.button {
-			padding: 14px 18px;
-		}
-
-		#news {
-			right: 16px;
-			left: 16px;
-			bottom: 2.5rem;
-			max-width: 100%;
-		}
-
-		h1 {
-			line-height: 1.5;
-		}
-	}
-</style>

@@ -1,0 +1,42 @@
+---
+interface Props {
+    label: string;
+    column?: string;
+    currentSort?: string;
+    direction?: "asc" | "desc";
+}
+
+const { label, column, currentSort, direction } = Astro.props;
+const isSortable = column && currentSort && direction;
+const isActive = isSortable && currentSort === column;
+---
+
+<th
+    class={`px-6 py-4 text-left text-sm font-medium text-white ${isSortable ? "cursor-pointer group" : ""}`}
+>
+    {
+        isSortable ? (
+            <a
+                href={`?sort=${column}&dir=${isActive && direction === "asc" ? "desc" : "asc"}`}
+                class="flex items-center gap-2"
+            >
+                {label}
+                <svg
+                    class={`h-4 w-4 transition-opacity ${isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`}
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                >
+                    {isActive && direction === "desc" ? (
+                        <path d="M19 9l-7 7-7-7" />
+                    ) : (
+                        <path d="M5 15l7-7 7 7" />
+                    )}
+                </svg>
+            </a>
+        ) : (
+            label
+        )
+    }
+</th>

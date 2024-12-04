@@ -1,0 +1,21 @@
+---
+import { db, Product, eq } from "astro:db";
+
+const { id } = Astro.params;
+
+if (!id) {
+    return Astro.redirect("/404");
+}
+
+const product = await db
+    .select()
+    .from(Product)
+    .where(eq(Product.id, id))
+    .limit(1);
+
+if (!product[0] || !product[0].website) {
+    return Astro.redirect("/404");
+}
+
+return Astro.redirect(`${product[0].website}?ref=headlesscommerce.org`);
+---
