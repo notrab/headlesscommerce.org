@@ -36,7 +36,7 @@ const products = await query.orderBy(dirFunction(sortableColumns[sort]));
 <Layout title="Build your next commerce stack | Headless Commerce Directory">
     <Welcome />
 
-    <table class="w-full">
+    <table id="product-table" class="w-full">
                   <thead class="bg-black border-b sticky top-0 z-20">
                     <tr>
                       <TableHeader label="Product" column="name" currentSort={sort} direction={dirString} />
@@ -103,3 +103,19 @@ const products = await query.orderBy(dirFunction(sortableColumns[sort]));
                   </tbody>
                 </table>
 </Layout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const exploreButton = document.getElementById('explore-directory');
+    const table = document.getElementById('product-table');
+
+    if (exploreButton && table) {
+      exploreButton.addEventListener('click', (e: Event) => {
+        e.preventDefault();
+        table.scrollIntoView({ behavior: 'smooth' });
+      });
+    } else {
+      console.error('Explore button or product table not found');
+    }
+  });
+</script>
